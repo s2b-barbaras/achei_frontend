@@ -1,5 +1,8 @@
 <agm-map [zoom]="zoomDefault" [latitude]="currentLatitude" [longitude]="currentLongitude" (mapClick)="onChooseLocation($event)">
-  <agm-marker 
+  <agm-marker
+      iconUrl="../../assets/oil-icon.png"
+      width="20"
+      height="20"
       [latitude]="marcadorLatitude" 
       [longitude]="marcadorLongitude"
       *ngIf="locationChoose"></agm-marker>
