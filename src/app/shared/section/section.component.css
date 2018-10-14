@@ -1,0 +1,29 @@
+
+.container {
+    height: 900px;
+}
+
+@media (min-width: 993px) {
+    .container {
+        font-size: 1.4em;
+        padding: 0 5%;
+    }
+}
+@media (max-width: 992px){
+    .container {
+        font-size: 1.2em;
+        padding: 0 4%;
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        font-size: 1em;
+        padding: 0 3%;
+    }
+}
+@media (max-width: 576px) {
+    .container {
+        font-size: 0.8em;
+        padding: 0 2%;
+    }
+}

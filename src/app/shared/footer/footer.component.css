@@ -1,0 +1,17 @@
+footer {
+    height: 65px;
+    width: 100%;
+    bottom: 0;
+}
+
+mat-toolbar {
+    font-weight: 300;
+}
+
+.logo-section {
+    width: 100px;
+}
+
+.minimun-text-size {
+    font-size: 0.8em;
+}

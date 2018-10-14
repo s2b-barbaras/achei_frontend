@@ -10,6 +10,7 @@ import { SectionComponent } from './shared/section/section.component';
 import { MapComponent } from './map/map.component';
 import { AboutComponent } from './about/about.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SelectBoxComponent } from './shared/select-box/select-box.component';
 
 
 const routes: Routes = [
@@ -26,7 +27,8 @@ const routes: Routes = [
     FooterComponent,
     SectionComponent,
     MapComponent,
-    AboutComponent
+    AboutComponent,
+    SelectBoxComponent
   ],
   imports: [
     BrowserModule,
