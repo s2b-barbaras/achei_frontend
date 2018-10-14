@@ -1,7 +1,6 @@
-
 .container {
-    height: 900px;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 @media (min-width: 993px) {

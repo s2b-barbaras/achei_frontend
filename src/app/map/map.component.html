@@ -1,3 +1,6 @@
-  <p>
-    map works!
-  </p>
+<agm-map [zoom]="zoomDefault" [latitude]="currentLatitude" [longitude]="currentLongitude" (mapClick)="onChooseLocation($event)">
+  <agm-marker 
+      [latitude]="marcadorLatitude" 
+      [longitude]="marcadorLongitude"
+      *ngIf="locationChoose"></agm-marker>
+</agm-map>

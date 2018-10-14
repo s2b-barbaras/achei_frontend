@@ -11,12 +11,15 @@ import { MapComponent } from './map/map.component';
 import { AboutComponent } from './about/about.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SelectBoxComponent } from './shared/select-box/select-box.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
 
+import { AgmCoreModule } from '@agm/core';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
-  { path: 'home', component: MapComponent }
+  { path: 'home', component: HomeComponent }
 ];
 
 @NgModule({
@@ -28,15 +31,22 @@ const routes: Routes = [
     SectionComponent,
     MapComponent,
     AboutComponent,
-    SelectBoxComponent
+    SelectBoxComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     MaterialModule,
     FlexLayoutModule,
+    ReactiveFormsModule,
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA8LDdCMvzUS-wvFdiPXHXIaaknr5e1P4M'
+    }),
     RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
