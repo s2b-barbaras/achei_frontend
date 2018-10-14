@@ -1,0 +1,11 @@
+.content {
+    width: 100%;
+}
+
+p {
+    margin-right: 20px;
+}
+
+.input-full-width {
+    width: 300px !important;
+}
