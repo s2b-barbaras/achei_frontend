@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 
 import { AgmCoreModule } from '@agm/core';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -39,6 +40,7 @@ const routes: Routes = [
     MaterialModule,
     FlexLayoutModule,
     ReactiveFormsModule,
+    HttpClientModule,
     FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyA8LDdCMvzUS-wvFdiPXHXIaaknr5e1P4M'

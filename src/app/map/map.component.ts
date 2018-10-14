@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Entity } from './../models/entity';
+import { MapService } from './../services/map.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-map',
@@ -7,22 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapComponent implements OnInit {
 
-  currentLatitude = 51.678418;
-  currentLongitude = 7.809007;
-  marcadorLatitude = 0;
-  marcadorLongitude = 0;
-  locationChoose = false;
+  currentLatitude = null;
+  currentLongitude = null;
   isTracking = false;
-  zoomDefault = 18;
+  zoomDefault = 12;
 
-  onChooseLocation(event) {
-    console.log(event);
-    this.marcadorLatitude = event.coords.lat;
-    this.marcadorLongitude = event.coords.lng;
-    this.locationChoose = true;
-  }
+  @Input()
+  public entities: Entity[];
+
+  @Output()
+  public newEntity = new EventEmitter();
 
   constructor() { }
+
+  onCreateNewEntity(event) {
+    this.newEntity.emit(event);
+  }
 
   ngOnInit() {
     this.findMe();

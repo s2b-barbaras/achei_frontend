@@ -1,4 +1,7 @@
 <app-section>
-  <app-select-box (changeSelect)="onChangeSelectMapOption($event)" [entidades]="entidades"></app-select-box>
-  <app-map></app-map>
+  <app-select-box (changeSelect)="onChangeSelectMapOption($event)" [entidades]="tiposEntidades"></app-select-box>
+  <app-map 
+    (newEntity)="onCreateNewEntity($event)"
+    [entities]="entidades"
+  ></app-map>
 </app-section>

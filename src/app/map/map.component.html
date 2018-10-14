@@ -1,9 +1,15 @@
-<agm-map [zoom]="zoomDefault" [latitude]="currentLatitude" [longitude]="currentLongitude" (mapClick)="onChooseLocation($event)">
+<agm-map [zoom]="zoomDefault" [latitude]="currentLatitude" [longitude]="currentLongitude" (mapClick)="onCreateNewEntity($event)">
   <agm-marker
-      iconUrl="../../assets/oil-icon.png"
-      width="20"
-      height="20"
-      [latitude]="marcadorLatitude" 
-      [longitude]="marcadorLongitude"
-      *ngIf="locationChoose"></agm-marker>
+    iconUrl="../../assets/me.png"
+    [latitude]="currentLatitude" 
+    [longitude]="currentLongitude"
+    *ngIf="currentLatitude && currentLongitude"
+></agm-marker>
+
+  <agm-marker
+      *ngFor="let dado of this.entities"
+      [iconUrl]="dado.IconUrl"
+      [latitude]="dado.localizacao.latitude" 
+      [longitude]="dado.localizacao.longitude"
+  ></agm-marker>
 </agm-map>
