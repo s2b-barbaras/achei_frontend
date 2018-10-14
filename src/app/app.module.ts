@@ -1,3 +1,4 @@
+import { Routes, RouterModule } from '@angular/router';
 import { MaterialModule } from './material/material.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,6 +10,13 @@ import { SectionComponent } from './shared/section/section.component';
 import { MapComponent } from './map/map.component';
 import { AboutComponent } from './about/about.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+
+
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'about', component: AboutComponent },
+  { path: 'home', component: MapComponent }
+];
 
 @NgModule({
   declarations: [
@@ -23,7 +31,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   imports: [
     BrowserModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,9 +1,8 @@
-<mat-toolbar color="primary" >
-
-  <span>Achei</span>
-  
-  <a mat-button> Página Inicial </a>
-  <a mat-button> Sobre </a>
-
-
+<mat-toolbar class="mat-elevation-z6" color="primary" >
+  <span [routerLink]="['/home']" class="link home-logo" fxLayout="row" fxLayoutAlign="space-between center"> 
+    <img width="40px" height="40px" src="../../../assets/gps-419-615321.png" alt="Logo do Site"/> 
+    <a mat-button>Achei</a>
+  </span>
+  <a [routerLink]="['/home']" routerLinkActive="active" class="link" mat-button> Página Inicial </a>
+  <a [routerLink]="['/about']" routerLinkActive="active" class="link" mat-button> Sobre </a>
 </mat-toolbar>

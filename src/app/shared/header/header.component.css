@@ -1,0 +1,23 @@
+.link {
+    margin-right: 20px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+mat-toolbar {
+    z-index: 2;
+    position: fixed;
+    top: 0px;
+}
+
+.active {
+    font-weight: 500;
+    text-shadow: 1px;
+}
+
+.home-logo {
+    width: 100px;
+    margin-right: 40px;
+}
