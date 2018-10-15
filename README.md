@@ -1,6 +1,5 @@
 # FrontAchei
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
+Aplicação com o intuito de informar locais de diferentes tipos na cidade de Porto Alegre vidando faciliar a busca no dia a dia.
 
 ## Development server
 
@@ -25,3 +24,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Melhorias
+
+- Expandir para outros domínios de utilidade (cinemas, postos de gasolina, etc)
+- Limitar a quantidade que vem da lista, através de um parâmetro de raio de localização
+
