@@ -5,6 +5,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   imports: [
@@ -13,14 +14,16 @@ import { MatDialogModule } from '@angular/material';
     MatToolbarModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule,
   ],
   exports: [
     BrowserAnimationsModule,
     MatToolbarModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule,
   ],
   declarations: []
 })

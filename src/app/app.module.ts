@@ -35,7 +35,7 @@ const routes: Routes = [
     AboutComponent,
     SelectBoxComponent,
     HomeComponent,
-    DialogCadastrarComponent
+    DialogCadastrarComponent,
   ],
   imports: [
     BrowserModule,

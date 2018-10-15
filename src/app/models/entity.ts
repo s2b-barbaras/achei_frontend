@@ -38,6 +38,8 @@ export class Entity implements IEntity {
                 return '../../assets/toilet-icon.png';
             case 'pontos-coleta-azeite':
                 return '../../assets/oil-icon.png';
+            case 'sebo':
+                return '../../assets/sebo.png';
         }
     }
 }

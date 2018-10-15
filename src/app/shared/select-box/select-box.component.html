@@ -3,10 +3,10 @@
     O que você procura? 
   </p>
   <mat-form-field floatLabel="never" class="input-full-width">
-      <mat-select (selectionChange)="onChangeSelect($event)" placeholder="Selecione...">
-        <mat-option *ngFor="let entidade of entidades" [value]="entidade.value">
-          {{entidade.viewValue}}
-        </mat-option>
-      </mat-select>
+    <mat-select (selectionChange)="onChangeSelect($event)" placeholder="Selecione...">
+      <mat-option *ngFor="let entidade of entidades" [value]="entidade.value">
+        {{entidade.viewValue}}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
 </div>

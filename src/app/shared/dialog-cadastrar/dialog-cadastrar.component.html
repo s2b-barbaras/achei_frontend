@@ -1,16 +1,38 @@
-<h2 mat-dialog-title>{{description}}</h2>
+<h2 mat-dialog-title>Cadastrar Local</h2>
 
-<mat-dialog-content [formGroup]="form">
-  
+<div>
+  <mat-dialog-content [formGroup]="form">
     <mat-form-field>
-      <input matInput
-              placeholder="Course Description"
-              formControlName="description" />
+      <textarea matInput
+            placeholder="Informe o local"
+            formControlName="description"></textarea>
     </mat-form-field>
- 
-</mat-dialog-content>
+  </mat-dialog-content>
+</div>
+
+<div>
+  <mat-dialog-content>
+    <mat-form-field>
+      <textarea matInput
+            placeholder="Informe o endereço"
+            formControlName="description"></textarea>
+    </mat-form-field>
+  </mat-dialog-content>
+</div>
+
+<div>
+  <mat-dialog-content>
+    <mat-form-field>
+      <mat-select (selectionChange)="onChangeSelect($event)" placeholder="Selecione o que deseja cadastrar:">
+        <mat-option *ngFor="let entidade of entidades" [value]="entidade.value">
+          {{entidade.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-dialog-content>
+</div>
 
 <mat-dialog-actions>
-    <button class="mat-raised-button"(click)="close()">Close</button>
-    <button class="mat-raised-button mat-primary"(click)="save()">Save</button>
+  <button class="mat-raised-button" (click)="close()">Fechar</button>
+    <button class="mat-raised-button mat-primary" (click)="save()">Salvar</button>
 </mat-dialog-actions>

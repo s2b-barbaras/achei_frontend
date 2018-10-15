@@ -1,0 +1,15 @@
+mat-card-content {
+    line-height: 1.6em;
+}
+
+.section-text {
+    text-align: justify;
+}
+
+span {
+    margin-bottom: 10px;
+}
+
+mat-card  {
+    margin-bottom: 25px;
+}

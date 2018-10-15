@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   tiposEntidades: ComboEntidades[] = [
     {value: 'banheiros', viewValue: 'Banheiros'},
     {value: 'pontos-coleta-azeite', viewValue: 'Pontos de Coleta de Azeite'},
+    {value: 'sebo', viewValue: 'Sebos'},
   ];
   public tipoEntidadeSelecionado: string;
   public entidades: Entity[];
@@ -46,20 +47,6 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  configDialog(dialogConfig: MatDialogConfig) {
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-
-    dialogConfig.position = {
-      'top': '0',
-      left: '0'
-    };
-
-    dialogConfig.data = {
-      id: 1,
-      title: 'Angular For Beginners'
-    };
-  }
 
   saveEntity(dados, eventCoordenadas) {
     dados.localizacao = {
@@ -74,17 +61,30 @@ export class HomeComponent implements OnInit {
       });
   }
 
+  configDialog(dialogConfig: MatDialogConfig, dados) {
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    dialogConfig.height = '400px';
+    dialogConfig.width = '600px';
+
+    dialogConfig.data = dados;
+  }
+
   onCreateNewEntity(event) {
     console.log(event);
     const dialogConfig = new MatDialogConfig();
+    const dados = {
+      tiposEntidades: this.tiposEntidades,
+    };
 
-    this.configDialog(dialogConfig);
+    this.configDialog(dialogConfig, dados);
 
     const dialogRef = this.dialog.open(DialogCadastrarComponent, dialogConfig);
 
     dialogRef.afterClosed()
       .subscribe(
-        dados => this.saveEntity(dados, event)
+        data => this.saveEntity(data, event)
     );
   }
 
