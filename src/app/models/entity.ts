@@ -1,5 +1,5 @@
 export interface IEntity {
-    id: string;
+    _id: string;
     nome: string;
     localizacao: Location;
     descricao: string;
@@ -10,7 +10,7 @@ export interface IEntity {
 }
 
 export class Entity implements IEntity {
-    id: string;
+    _id: string;
     nome: string;
     localizacao: Location;
     descricao: string;
@@ -22,7 +22,7 @@ export class Entity implements IEntity {
     constructor(
         entidade: IEntity
     ) {
-        this.id = entidade.id;
+        this._id = entidade._id;
         this.nome = entidade.nome;
         this.localizacao = entidade.localizacao;
         this.descricao = entidade.descricao;

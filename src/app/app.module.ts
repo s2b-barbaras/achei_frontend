@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 
 import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
+import { DialogCadastrarComponent } from './shared/dialog-cadastrar/dialog-cadastrar.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -34,6 +35,7 @@ const routes: Routes = [
     AboutComponent,
     SelectBoxComponent,
     HomeComponent,
+    DialogCadastrarComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogCadastrarComponent]
 })
 
 export class AppModule { }

@@ -9,10 +9,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class MapComponent implements OnInit {
 
-  currentLatitude = null;
-  currentLongitude = null;
+  currentLatitude = 0;
+  currentLongitude = 0;
   isTracking = false;
   zoomDefault = 12;
+  currentZoom = 0;
 
   @Input()
   public entities: Entity[];
@@ -20,14 +21,27 @@ export class MapComponent implements OnInit {
   @Output()
   public newEntity = new EventEmitter();
 
+  @Output()
+  public clickDetails = new EventEmitter();
+
   constructor() { }
 
   onCreateNewEntity(event) {
-    this.newEntity.emit(event);
+    if (this.currentZoom > 14) {
+      this.newEntity.emit(event);
+    }
   }
 
   ngOnInit() {
     this.findMe();
+  }
+
+  onClickDetails(event) {
+    this.clickDetails.emit(event);
+  }
+
+  getZoom(event) {
+    this.currentZoom = event;
   }
 
   trackMe() {

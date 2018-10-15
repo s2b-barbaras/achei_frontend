@@ -32,4 +32,8 @@ export class MapService {
         })
       );
   }
+
+  salvarEntidade(entity: Entity): Observable<Entity[]> {
+    return this.http.post<any>(this.urlAPI + 'entidade', entity);
+    }
 }
