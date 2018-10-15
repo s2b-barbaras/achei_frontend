@@ -8,6 +8,7 @@
 
   <agm-marker
       *ngFor="let dado of this.entities"
+      [title]="dado.nome"
       (markerClick)="onClickDetails(dado)"
       [iconUrl]="dado.IconUrl"
       [latitude]="dado.localizacao.latitude" 

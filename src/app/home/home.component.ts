@@ -13,9 +13,9 @@ import { MatDialog, MatDialogConfig } from '@angular/material';
 export class HomeComponent implements OnInit {
 
   tiposEntidades: ComboEntidades[] = [
-    {value: 'banheiros', viewValue: 'Banheiros'},
-    {value: 'pontos-coleta-azeite', viewValue: 'Pontos de Coleta de Azeite'},
-    {value: 'sebo', viewValue: 'Sebos'},
+    { value: 'banheiros', viewValue: 'Banheiros' },
+    { value: 'pontos-coleta-azeite', viewValue: 'Pontos de Coleta de Azeite' },
+    { value: 'sebo', viewValue: 'Sebos' },
   ];
   public tipoEntidadeSelecionado: string;
   public entidades: Entity[];
