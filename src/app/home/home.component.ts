@@ -4,6 +4,7 @@ import { MapService } from './../services/map.service';
 import { Component, OnInit } from '@angular/core';
 import { ComboPlaces } from '../models/combo-places';
 import { MatDialog, MatDialogConfig } from '@angular/material';
+import { DialogDetalhesComponent } from '../shared/dialog-detalhes/dialog-detalhes.component';
 
 @Component({
   selector: 'app-home',
@@ -36,17 +37,12 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  openDetails(dadosSelecionado) {
-    console.log('openDetails', dadosSelecionado);
-  }
-
   buscarPlacesPorTipo(tipoPlace: string) {
     this.mapService.getPlacesPorTipo(tipoPlace)
     .subscribe(dados => {
       this.places = dados;
     });
   }
-
 
   savePlace(dados, eventCoordenadas) {
     dados.localizacao = {
@@ -67,6 +63,22 @@ export class HomeComponent implements OnInit {
     } else {
       this.buscarAllPlaces();
     }
+  }
+
+  configDetails(detailsCongif: MatDialogConfig, dadosSelecionado) {
+    detailsCongif.data = dadosSelecionado;
+  }
+
+  openDetails(event) {
+    console.log(event);
+    const detailsConfig = new MatDialogConfig();
+    const dadosSelecionado = {
+      details: this.places,
+    };
+
+    this.configDetails(detailsConfig, dadosSelecionado);
+
+    const show = this.dialog.open(DialogDetalhesComponent, detailsConfig);
   }
 
   configDialog(dialogConfig: MatDialogConfig, dados) {
