@@ -65,18 +65,9 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  configDetails(detailsCongif: MatDialogConfig, dadosSelecionado) {
-    detailsCongif.data = dadosSelecionado;
-  }
-
-  openDetails(event) {
-    console.log(event);
+  openDetails(dadosSelecionado) {
+    console.log(dadosSelecionado);
     const detailsConfig = new MatDialogConfig();
-    const dadosSelecionado = {
-      details: this.places,
-    };
-
-    this.configDetails(detailsConfig, dadosSelecionado);
 
     const show = this.dialog.open(DialogDetalhesComponent, detailsConfig);
   }
