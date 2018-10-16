@@ -27,7 +27,7 @@ export class DialogCadastrarComponent implements OnInit {
       this.form = this.createFormGroup();
 
     }
-    
+
     createFormGroup(): FormGroup {
       return this.formBuilder.group({
         nome:  ['', Validators.required],
@@ -43,7 +43,10 @@ export class DialogCadastrarComponent implements OnInit {
 
     save() {
       if (this.form.valid) {
-        this.dialogRef.close(this.form.value);
+        const formValue = this.form.value;
+        formValue.keywords = formValue.keywords.split(';');
+        formValue.camposDinamicos = [];
+        this.dialogRef.close(formValue);
       }
     }
 

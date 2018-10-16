@@ -54,11 +54,19 @@ export class HomeComponent implements OnInit {
       longitude: eventCoordenadas.coords.lng,
     };
     console.log('dados para salvar', dados);
-    // Descomentar somente quando o objeto dados vier corretamente
     this.mapService.savePlace(dados)
       .subscribe(() => {
+        this.refreshView();
         // Chamar o buscarPlacesPorTipo passando o this.tipoPlaceSelecionado
       });
+  }
+
+  refreshView(): any {
+    if (this.tipoPlaceSelecionado) {
+      this.buscarPlacesPorTipo(this.tipoPlaceSelecionado);
+    } else {
+      this.buscarAllPlaces();
+    }
   }
 
   configDialog(dialogConfig: MatDialogConfig, dados) {
@@ -84,7 +92,11 @@ export class HomeComponent implements OnInit {
 
     dialogRef.afterClosed()
       .subscribe(
-        data => this.savePlace(data, event)
+        data => {
+          if (data) {
+            this.savePlace(data, event);
+          }
+        }
     );
   }
 

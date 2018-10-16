@@ -1,4 +1,11 @@
-<agm-map *ngIf="places && places.length > 0" (zoomChange)="this.getZoom($event)" [zoom]="zoomDefault" [latitude]="currentLatitude" [longitude]="currentLongitude" (mapClick)="onCreateNewPlace($event)">
+<agm-map 
+  *ngIf="places && places.length > 0" 
+  (zoomChange)="this.getZoom($event)" 
+  [zoom]="zoomDefault" 
+  [latitude]="currentLatitude" 
+  [longitude]="currentLongitude" 
+  (mapClick)="onCreateNewPlace($event)"
+>
   <agm-marker
     iconUrl="../../assets/me.png"
     [latitude]="currentLatitude" 
