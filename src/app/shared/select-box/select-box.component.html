@@ -4,8 +4,8 @@
   </p>
   <mat-form-field floatLabel="never" class="input-full-width">
     <mat-select (selectionChange)="onChangeSelect($event)" placeholder="Selecione...">
-      <mat-option *ngFor="let entidade of entidades" [value]="entidade.value">
-        {{entidade.viewValue}}
+      <mat-option *ngFor="let place of places" [value]="place.value">
+        {{place.viewValue}}
       </mat-option>
     </mat-select>
   </mat-form-field>

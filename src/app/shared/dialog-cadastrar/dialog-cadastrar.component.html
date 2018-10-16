@@ -1,38 +1,39 @@
-<h2 mat-dialog-title>Cadastrar Local</h2>
-
-<div>
-  <mat-dialog-content [formGroup]="form">
+<section> 
+  
+  
+  <h2 mat-dialog-title>Cadastrar Local</h2>
+  
+  <mat-dialog-content fxLayout="column" fxLayoutAlign="center space-between" [formGroup]="form">
+    
+    <mat-form-field>
+      <input matInput
+      placeholder="Informe o nome do local"
+      formControlName="nome" />
+    </mat-form-field>
+    
     <mat-form-field>
       <textarea matInput
-            placeholder="Informe o local"
-            formControlName="description"></textarea>
+      placeholder="Informe a descrição ou endereço"
+      formControlName="descricao"></textarea>
     </mat-form-field>
-  </mat-dialog-content>
-</div>
-
-<div>
-  <mat-dialog-content>
+    
     <mat-form-field>
       <textarea matInput
-            placeholder="Informe o endereço"
-            formControlName="description"></textarea>
+      placeholder="Adicione palavras-chaves separado por ;"
+      formControlName="keywords"></textarea>
     </mat-form-field>
-  </mat-dialog-content>
-</div>
-
-<div>
-  <mat-dialog-content>
+    
     <mat-form-field>
-      <mat-select (selectionChange)="onChangeSelect($event)" placeholder="Selecione o que deseja cadastrar:">
-        <mat-option *ngFor="let entidade of entidades" [value]="entidade.value">
-          {{entidade.viewValue}}
+      <mat-select placeholder="Selecione o que deseja cadastrar: " formControlName="tipo"> 
+        <mat-option *ngFor="let place of dados.tiposPlaces" [value]="place.value">
+          {{place.viewValue}}
         </mat-option>
       </mat-select>
     </mat-form-field>
-  </mat-dialog-content>
-</div>
 
-<mat-dialog-actions>
-  <button class="mat-raised-button" (click)="close()">Fechar</button>
-    <button class="mat-raised-button mat-primary" (click)="save()">Salvar</button>
-</mat-dialog-actions>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+      <button class="mat-raised-button" (click)="close()">Fechar</button>
+      <button class="mat-raised-button mat-primary" (click)="save()">Salvar</button>
+    </mat-dialog-actions>
+</section>

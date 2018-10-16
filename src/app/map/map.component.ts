@@ -1,4 +1,4 @@
-import { Entity } from './../models/entity';
+import { Place } from './../models/place';
 import { MapService } from './../services/map.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
@@ -16,19 +16,19 @@ export class MapComponent implements OnInit {
   currentZoom = 0;
 
   @Input()
-  public entities: Entity[];
+  public places: Place[];
 
   @Output()
-  public newEntity = new EventEmitter();
+  public newPlace = new EventEmitter();
 
   @Output()
   public clickDetails = new EventEmitter();
 
   constructor() { }
 
-  onCreateNewEntity(event) {
+  onCreateNewPlace(event) {
     if (this.currentZoom > 14) {
-      this.newEntity.emit(event);
+      this.newPlace.emit(event);
     }
   }
 

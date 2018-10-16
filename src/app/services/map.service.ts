@@ -1,4 +1,4 @@
-import { Entity } from './../models/entity';
+import { Place } from '../models/place';
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -15,25 +15,25 @@ export class MapService {
     this.urlAPI = environment.urlApi;
   }
 
-  getTodasEntidades(): Observable<Entity[]> {
-    return this.http.get<Entity[]>(this.urlAPI + 'entidades')
+  getAllPlaces(): Observable<Place[]> {
+    return this.http.get<Place[]>(this.urlAPI + 'places')
       .pipe(
         map((dados) => {
-          return dados.map(dado => new Entity(dado));
+          return dados.map(dado => new Place(dado));
         })
       );
   }
 
-  getEntidadesPorTipo(tipoEntidade: string): Observable<Entity[]> {
-    return this.http.get<Entity[]>(this.urlAPI + 'entidades/' + tipoEntidade)
+  getPlacesPorTipo(tipoPlace: string): Observable<Place[]> {
+    return this.http.get<Place[]>(this.urlAPI + 'places/' + tipoPlace)
       .pipe(
         map((dados) => {
-          return dados.map(dado => new Entity(dado));
+          return dados.map(dado => new Place(dado));
         })
       );
   }
 
-  salvarEntidade(entity: Entity): Observable<Entity[]> {
-    return this.http.post<any>(this.urlAPI + 'entidade', entity);
+  savePlace(place: Place): Observable<Place[]> {
+    return this.http.post<any>(this.urlAPI + 'place', place);
     }
 }

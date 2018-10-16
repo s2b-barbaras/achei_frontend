@@ -1,8 +1,8 @@
+import { Place } from './../models/place';
 import { DialogCadastrarComponent } from './../shared/dialog-cadastrar/dialog-cadastrar.component';
 import { MapService } from './../services/map.service';
-import { Entity } from './../models/entity';
 import { Component, OnInit } from '@angular/core';
-import { ComboEntidades } from '../models/combo-entidades';
+import { ComboPlaces } from '../models/combo-places';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 
 @Component({
@@ -12,13 +12,13 @@ import { MatDialog, MatDialogConfig } from '@angular/material';
 })
 export class HomeComponent implements OnInit {
 
-  tiposEntidades: ComboEntidades[] = [
+  tiposPlaces: ComboPlaces[] = [
     { value: 'banheiros', viewValue: 'Banheiros' },
     { value: 'pontos-coleta-azeite', viewValue: 'Pontos de Coleta de Azeite' },
     { value: 'sebo', viewValue: 'Sebos' },
   ];
-  public tipoEntidadeSelecionado: string;
-  public entidades: Entity[];
+  public tipoPlaceSelecionado: string;
+  public places: Place[];
 
   constructor(
     private mapService: MapService,
@@ -26,13 +26,13 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.buscarTodasEntidades();
+    this.buscarAllPlaces();
   }
 
-  buscarTodasEntidades() {
-    this.mapService.getTodasEntidades()
+  buscarAllPlaces() {
+    this.mapService.getAllPlaces()
     .subscribe(dados => {
-      this.entidades = dados;
+      this.places = dados;
     });
   }
 
@@ -40,24 +40,24 @@ export class HomeComponent implements OnInit {
     console.log('openDetails', dadosSelecionado);
   }
 
-  buscarEntidadesPorTipo(tipoEntidade: string) {
-    this.mapService.getEntidadesPorTipo(tipoEntidade)
+  buscarPlacesPorTipo(tipoPlace: string) {
+    this.mapService.getPlacesPorTipo(tipoPlace)
     .subscribe(dados => {
-      this.entidades = dados;
+      this.places = dados;
     });
   }
 
 
-  saveEntity(dados, eventCoordenadas) {
+  savePlace(dados, eventCoordenadas) {
     dados.localizacao = {
       latitude: eventCoordenadas.coords.lat,
       longitude: eventCoordenadas.coords.lng,
     };
     console.log('dados para salvar', dados);
     // Descomentar somente quando o objeto dados vier corretamente
-    this.mapService.salvarEntidade(dados)
+    this.mapService.savePlace(dados)
       .subscribe(() => {
-        // Chamar o buscarEntidadesPorTipo passando o this.tipoEntidadeSelecionado
+        // Chamar o buscarPlacesPorTipo passando o this.tipoPlaceSelecionado
       });
   }
 
@@ -65,17 +65,17 @@ export class HomeComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
-    dialogConfig.height = '400px';
-    dialogConfig.width = '600px';
+    dialogConfig.height = '500px';
+    dialogConfig.width = '500px';
 
     dialogConfig.data = dados;
   }
 
-  onCreateNewEntity(event) {
+  onCreateNewPlace(event) {
     console.log(event);
     const dialogConfig = new MatDialogConfig();
     const dados = {
-      tiposEntidades: this.tiposEntidades,
+      tiposPlaces: this.tiposPlaces,
     };
 
     this.configDialog(dialogConfig, dados);
@@ -84,12 +84,12 @@ export class HomeComponent implements OnInit {
 
     dialogRef.afterClosed()
       .subscribe(
-        data => this.saveEntity(data, event)
+        data => this.savePlace(data, event)
     );
   }
 
-  onChangeSelectMapOption(tipoEntidade: string) {
-    this.tipoEntidadeSelecionado = tipoEntidade;
-    this.buscarEntidadesPorTipo(tipoEntidade);
+  onChangeSelectMapOption(tipoPlace: string) {
+    this.tipoPlaceSelecionado = tipoPlace;
+    this.buscarPlacesPorTipo(tipoPlace);
   }
 }

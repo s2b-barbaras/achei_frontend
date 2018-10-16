@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject, Input, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA, MatSelectChange } from '@angular/material';
-import { ComboEntidades } from '../../models/combo-entidades';
+import { ComboPlaces } from '../../models/combo-places';
 
 @Component({
   selector: 'app-dialog',
@@ -11,32 +11,40 @@ import { ComboEntidades } from '../../models/combo-entidades';
 export class DialogCadastrarComponent implements OnInit {
 
   form: FormGroup;
-  description: string;
   dados: any;
 
   @Input()
-  entidades: ComboEntidades[];
+  places: ComboPlaces[];
 
   @Output()
   public changeSelect = new EventEmitter();
 
   constructor(
-    private fb: FormBuilder,
+    private formBuilder: FormBuilder,
     private dialogRef: MatDialogRef<DialogCadastrarComponent>,
     @Inject(MAT_DIALOG_DATA) data) {
       this.dados = data;
-      this.description = data.description;
+      this.form = this.createFormGroup();
+
+    }
+    
+    createFormGroup(): FormGroup {
+      return this.formBuilder.group({
+        nome:  ['', Validators.required],
+        descricao:  ['', Validators.required],
+        tipo:  ['', Validators.required],
+        keywords:  ['', Validators.required]
+      });
     }
 
     ngOnInit() {
       console.log(this.dados);
-      this.form = this.fb.group({
-        description: [this.description, []],
-      });
     }
 
     save() {
-      this.dialogRef.close(this.form.value);
+      if (this.form.valid) {
+        this.dialogRef.close(this.form.value);
+      }
     }
 
     close() {

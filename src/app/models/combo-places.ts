@@ -1,4 +1,4 @@
-export class ComboEntidades {
+export class ComboPlaces {
     value: string;
     viewValue: string;
  }

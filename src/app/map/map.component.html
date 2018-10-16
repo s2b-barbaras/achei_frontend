@@ -1,4 +1,4 @@
-<agm-map *ngIf="entities && entities.length > 0" (zoomChange)="this.getZoom($event)" [zoom]="zoomDefault" [latitude]="currentLatitude" [longitude]="currentLongitude" (mapClick)="onCreateNewEntity($event)">
+<agm-map *ngIf="places && places.length > 0" (zoomChange)="this.getZoom($event)" [zoom]="zoomDefault" [latitude]="currentLatitude" [longitude]="currentLongitude" (mapClick)="onCreateNewPlace($event)">
   <agm-marker
     iconUrl="../../assets/me.png"
     [latitude]="currentLatitude" 
@@ -7,11 +7,11 @@
 ></agm-marker>
 
   <agm-marker
-      *ngFor="let dado of this.entities"
-      [title]="dado.nome"
-      (markerClick)="onClickDetails(dado)"
-      [iconUrl]="dado.IconUrl"
-      [latitude]="dado.localizacao.latitude" 
-      [longitude]="dado.localizacao.longitude"
+      *ngFor="let place of this.places"
+      [title]="place.nome"
+      (markerClick)="onClickDetails(place)"
+      [iconUrl]="place.IconUrl"
+      [latitude]="place.localizacao.latitude" 
+      [longitude]="place.localizacao.longitude"
   ></agm-marker>
 </agm-map>

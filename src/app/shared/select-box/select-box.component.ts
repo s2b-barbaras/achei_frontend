@@ -1,4 +1,4 @@
-import { ComboEntidades } from './../../models/combo-entidades';
+import { ComboPlaces } from '../../models/combo-places';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
 
@@ -10,7 +10,7 @@ import { MatSelectChange } from '@angular/material/select';
 export class SelectBoxComponent implements OnInit {
 
   @Input()
-  entidades: ComboEntidades[];
+  places: ComboPlaces[];
 
   @Output()
   public changeSelect = new EventEmitter();

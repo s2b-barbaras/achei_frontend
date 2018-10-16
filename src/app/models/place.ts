@@ -1,4 +1,4 @@
-export interface IEntity {
+export interface IPlace {
     _id: string;
     nome: string;
     localizacao: Location;
@@ -9,7 +9,7 @@ export interface IEntity {
     created_date: string;
 }
 
-export class Entity implements IEntity {
+export class Place implements IPlace {
     _id: string;
     nome: string;
     localizacao: Location;
@@ -20,16 +20,16 @@ export class Entity implements IEntity {
     created_date: string;
 
     constructor(
-        entidade: IEntity
+        place: IPlace
     ) {
-        this._id = entidade._id;
-        this.nome = entidade.nome;
-        this.localizacao = entidade.localizacao;
-        this.descricao = entidade.descricao;
-        this.tipo = entidade.tipo;
-        this.camposDinamicos = entidade.camposDinamicos;
-        this.keywords = entidade.keywords;
-        this.created_date = entidade.created_date;
+        this._id = place._id;
+        this.nome = place.nome;
+        this.localizacao = place.localizacao;
+        this.descricao = place.descricao;
+        this.tipo = place.tipo;
+        this.camposDinamicos = place.camposDinamicos;
+        this.keywords = place.keywords;
+        this.created_date = place.created_date;
     }
 
     get IconUrl() {
