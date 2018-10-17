@@ -13,3 +13,7 @@ span {
 mat-card  {
     margin-bottom: 25px;
 }
+
+.negrito {
+    font-weight: 600;
+}
