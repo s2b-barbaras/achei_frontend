@@ -104,8 +104,6 @@ NOTA: O comando npm start configurado nos scripts do package.json, executa o --a
   alt="Imagem da Autora Bárbara Anger" src="https://avatars3.githubusercontent.com/u/28331915?s=400&v=4" width="100">
 </a>
 
-
-
 ## License
 
 Este projeto possui Licença MIT - veja o arquivo [LICENSE.md](LICENSE.md) para saber mais detalhes.
