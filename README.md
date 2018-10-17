@@ -43,7 +43,7 @@ Passos necessários para rodar o projeto:
 
 - Clonar no projeto: 
 ```
-  git clone git@github.com/s2b-barbaras
+  git clone https://github.com/s2b-barbaras/achei_frontend
 ```
 - Instalar o angular-cli para ter acesso as ferramentas necessárias para rodar um projeto Angular em desenvolvimento: 
 
