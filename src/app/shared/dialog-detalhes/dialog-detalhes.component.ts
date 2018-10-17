@@ -1,3 +1,4 @@
+import { Place } from './../../models/place';
 import { Component, OnInit, Inject, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA, MatSelectChange } from '@angular/material';
@@ -11,7 +12,7 @@ import { ComboPlaces } from '../../models/combo-places';
 export class DialogDetalhesComponent implements OnInit {
 
   form: FormGroup;
-  dados: any;
+  place: Place;
 
   @Input()
   viewValue: ComboPlaces[];
@@ -22,13 +23,17 @@ export class DialogDetalhesComponent implements OnInit {
   constructor(
     private dialogRef: MatDialogRef<DialogDetalhesComponent>,
     @Inject(MAT_DIALOG_DATA) data) {
-      this.dados = data;
+      console.log('constructor', data);
+      this.place = data;
     }
 
     ngOnInit() {
-      console.log(this.dados);
+      console.log(this.place);
     }
 
+    getKeys() {
+      return Object.keys(this.place.camposDinamicos);
+    }
     save() {
       if (this.form.valid) {
         const formValue = this.form.value;
