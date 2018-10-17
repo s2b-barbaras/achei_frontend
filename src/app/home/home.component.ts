@@ -53,7 +53,6 @@ export class HomeComponent implements OnInit {
     this.mapService.savePlace(dados)
       .subscribe(() => {
         this.refreshView();
-        // Chamar o buscarPlacesPorTipo passando o this.tipoPlaceSelecionado
       });
   }
 
@@ -65,19 +64,16 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  openDetails(dadosSelecionado) {
-    console.log(dadosSelecionado);
-    const detailsConfig = new MatDialogConfig();
-
-    const show = this.dialog.open(DialogDetalhesComponent, detailsConfig);
+  openDetails(placeSelecionado) {
+    console.log(placeSelecionado);
+    const detailsDialogConfig = new MatDialogConfig();
+    this.configDialog(detailsDialogConfig, placeSelecionado);
+    const show = this.dialog.open(DialogDetalhesComponent, detailsDialogConfig);
   }
 
   configDialog(dialogConfig: MatDialogConfig, dados) {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-
-    dialogConfig.height = '500px';
-    dialogConfig.width = '500px';
 
     dialogConfig.data = dados;
   }
