@@ -80,15 +80,15 @@ NOTA: O comando npm start configurado nos scripts do package.json, executa o --a
   
 ## Autoras
 
-* **Bárbara Becker da Rosa** -  [GitHub](https://github.com/barbbecker)
-
+* *Bárbara Becker da Rosa* -  [GitHub](https://github.com/barbbecker)
+* E-mail: [bbeckerdarosa@gmail.com](bbeckerdarosa@gmail.com)
 <a>
   <img 
   alt="Imagem da Autora Bárbara Becker" src="https://avatars1.githubusercontent.com/u/39573350?s=400&u=3a24cbbb390e39b0eaab3c8278124a8b8ee252ae&v=4" width="100">
 </a>
 
-* **Bárbara Anger** -  [GitHub](https://github.com/BarbaraAnger)
-  
+* *Bárbara Anger* -  [GitHub](https://github.com/BarbaraAnger)
+* E-mail: [barbaraanger@hotmail.com](barbaraanger@hotmail.com)
 <a>
   <img 
   alt="Imagem da Autora Bárbara Anger" src="https://avatars3.githubusercontent.com/u/28331915?s=400&v=4" width="100">
