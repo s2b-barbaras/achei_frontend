@@ -2,22 +2,18 @@
 Aplicação com o intuito de informar locais de diferentes utilidades em Porto Alegre com a finalidade de auxiliar àqueles que necessitam de determinado serviço, feita para o projeto do S2B.
 
 ## Sumário
-
-  - [Introdução]
-    - [Principais recursos utilizados]
-    - [Pré-requisitos]
-    - [Instalação do Ambiente]
-    - [Uso do GitHub]
-  - [Considerações]
-  - [Possíveis melhorias]
-  - [Autoras]
-  - [License]
+  - [Introdução](#introdu%C3%A7%C3%A3o)
+    - [Principais recursos utilizados](#principais-recursos-utilizados)
+    - [Pré-requisitos](#pr%C3%A9-requisitos)
+    - [Instalação do Ambiente](#instala%C3%A7%C3%A3o-do-ambiente)
+    - [Uso do GitHub](#uso-do-github)
+  - [Possíveis melhorias](#poss%C3%ADveis-melhorias)
+  - [Autoras](#autoras)
+  - [License](#license)
 
 ## Introdução
 
 Nessa seção é descrito as dependências utilizadas na aplicação como um todo e instruções de como iniciar o projeto em modo de desenvolvimento.
-
-Disponível em: http://localhost:4200
 
 ### Principais recursos utilizados
 
@@ -26,7 +22,6 @@ Disponível em: http://localhost:4200
 * [NPM](https://www.npmjs.com) - Gerenciador de Dependências.
 *  [Angular Material](https://material.angular.io/) - Framework de estilo.
 *  [GitHub](https://github.com/) - Repositório de versionamento do código.
-*  [Firebase Hosting](https://firebase.google.com/docs/hosting/?hl=pt-br) - Ferramenta de Cloud fornecida pelo Google para hospedagem e deploy da aplicação.
 
 
 ### Pré-requisitos
@@ -74,11 +69,6 @@ NOTA: O comando npm start configurado nos scripts do package.json, executa o --a
   - Criação de um kanban com as etapas Todo, Doing e Closed. [Link do Board](https://github.com/orgs/s2b-barbaras/projects/1)
   - Criação de issues para poder relacionar nos commits.
   [Link das Issues](https://github.com/s2b-barbaras/achei_frontend/issues)
-
-
-## Considerações
-
-- 
 
 
 ## Possíveis melhorias
